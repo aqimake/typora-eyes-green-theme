@@ -1,13 +1,17 @@
 /* Eyes Green -Theme for Typora
+version: 2.0.0
 author:AqiMake
-date: 2025-02-04
+date: 2025-04-22
 homepage: https://github.com/AqiMake/typora-eyes-green-theme
-version: 1.0.1
 based on: default GitHub Theme from typora.io
  */
 :root {
-    --side-bar-bg-color: #fafafa;
+    --side-bar-bg-color: #EAF3EC;
     --control-text-color: #777;
+    --active-file-bg-color: #D1ECDE;
+    --active-file-border-color: #57A266;
+    --code-block-bg-color: #d9e8dd;
+    --text-selection-bg-color: #C9E3CF;
 }
 
 @include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
@@ -48,7 +52,7 @@ based on: default GitHub Theme from typora.io
 html {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
-    background-color: #e7f0e7;
+    background-color: #EAF3EC;
 }
 
 body {
@@ -82,7 +86,7 @@ body {
 }
 
 a {
-    color: #4183C4;
+    color: darkgreen;
 }
 h1,
 h2,
@@ -132,12 +136,12 @@ h6 code {
 h1 {
     font-size: 2.25em;
     line-height: 1.2;
-    border-bottom: 1px solid #aae2ae;
+    border-bottom: 1px solid #9bd19e;
 }
 h2 {
     font-size: 1.75em;
     line-height: 1.225;
-    border-bottom: 1px solid #aae2ae;
+    border-bottom: 1px solid #9bd19e;
 }
 
 /*@media print {
@@ -208,13 +212,11 @@ ul:last-child,
 ol:last-child {
     margin-bottom: 0;
 }
-blockquote {
-    border-left: 4px solid #dfe2e5;
+blockquote {   
+    background-color: #e2f1e9;
+    border-left: 6px solid #57a266;
+    border-radius: 4px;
     padding: 0 15px;
-    color: #777777;
-    background-color: rgb(209, 236, 222);
-    border-left: 8px solid #57a266;
-    border-radius: 7px;
 }
 blockquote blockquote {
     padding-right: 0;
@@ -265,7 +267,7 @@ table td:last-child {
 .md-fences,
 tt {
     border: 1px solid #e7eaed;
-    background-color: #f8f8f8;
+    background-color: var(--code-block-bg-color);
     border-radius: 3px;
     padding: 0;
     padding: 2px 4px 0px 4px;
@@ -273,18 +275,8 @@ tt {
 }
 
 code {
-    color: #57a266;
-    font-weight: bolder;
-    border: 1px solid #e7eaed;
-    background: rgb(209, 236, 222);
-    border-radius: 3px;
-    padding: 0;
-    padding: 2px 4px 0px 4px;
-    font-size: 0.9em;
-}
-
-code {
-    background-color: #f3f4f4;
+    color: #359D09;
+    background-color: #D9E8DD;
     padding: 0 2px 0 2px;
 }
 
@@ -310,7 +302,7 @@ code {
 }
 
 .md-fences {
-	background-color: #f8f8f8;
+    background-color: var(--code-block-bg-color);
 }
 #write pre.md-meta-block {
 	padding: 1rem;
@@ -369,6 +361,10 @@ code {
     border-bottom: none;
 }
 
+#typora-sidebar #sidebar-content .file-list-item.active {
+    border-left: 4px solid var(--active-file-border-color) !important;
+}
+
 #typora-quick-open {
     border: 1px solid #ddd;
     background-color: #f8f8f8;
@@ -408,9 +404,6 @@ header, .context-menu, .megamenu-content, footer{
     color: #b4654d;
 }
 
-/*.html-for-mac {
-    --item-hover-bg-color: #E6F0FE;
-}*/
 
 #md-notification{
     border: 0;
@@ -436,7 +429,68 @@ header, .context-menu, .megamenu-content, footer{
     background: #999;
 }
 
+/* preferences panel color mapping */
+.ty-preferences .window-content,
+.ty-preferences .pane-group,
+.ty-preferences .tab-content-container,
+.ty-preferences .nav-group {
+    background-color: #EAF3EC !important;
+}
+
+.ty-preferences .nav-group-item {
+    color: rgb(51, 51, 51);
+}
+
+.ty-preferences .nav-group-item.active {
+    color: rgb(51, 51, 51);
+    background: #D1ECDE;
+}
+
 .menu-item-container a.menu-style-btn {
     background-color: #f5f8fa;
     background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+::selection {
+    background: var(--text-selection-bg-color);  /* 文字选中颜色 */
+}
+
+.md-fences::selection,
+.md-fences *::selection,
+pre code::selection,
+code::selection {
+    background: var(--text-selection-bg-color);
+}
+
+.CodeMirror-selected,
+.CodeMirror-focused .CodeMirror-selected,
+.CodeMirror-selectedtext,
+.CodeMirror-focused .CodeMirror-selectedtext {
+    background: var(--text-selection-bg-color) !important;
+}
+
+.CodeMirror pre::selection,
+.CodeMirror pre *::selection,
+.CodeMirror-line::selection,
+.CodeMirror-line > span::selection,
+.CodeMirror-line > span > span::selection {
+    background: var(--text-selection-bg-color) !important;
+}
+
+.CodeMirror pre::-moz-selection,
+.CodeMirror pre *::-moz-selection,
+.CodeMirror-line::-moz-selection,
+.CodeMirror-line > span::-moz-selection,
+.CodeMirror-line > span > span::-moz-selection {
+    background: var(--text-selection-bg-color) !important;
+}
+::-webkit-scrollbar-track {
+  background: #EAF3EC;   /* 轨道底色 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9AC9A6;   /* 滑块颜色 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #57A266;   /* 悬停时更深 */
 }
