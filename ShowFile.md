@@ -1,8 +1,8 @@
 # Eyes Green
 
 ```note
-Select the 'Green Eyes' theme from the menu and use this file to view the 'Green Eyes' effect.
-在菜单中选择“Green Eyes”主题，并使用该文件浏览“Green Eyes”的效果。
+Select the 'Eyes Green' theme from the menu and use this file to view the 'Eyes Green' effect.
+在菜单中选择“Eyes Green”主题，并使用该文件浏览“Eyes Green”的效果。
 ```
 
 **bold**
@@ -45,7 +45,7 @@ public class Main {
 }
 ```
 
-When we compare two different strings, we should use `equals()` methods.
+When we compare two different strings, we should use `equals()` methods. Visit  [Baidu](www.baidu.com).
 
 ## Cite
 

@@ -278,6 +278,7 @@ code {
     color: #359D09;
     background-color: #D9E8DD;
     padding: 0 2px 0 2px;
+    border-radius: 2px;
 }
 
 .md-fences {
