@@ -6,20 +6,21 @@ homepage: https://github.com/AqiMake/typora-eyes-green-theme
 based on: typora-default-themes (https://github.com/typora/typora-default-themes)
  */
 
-/* 主题全局变量：统一管理主背景、侧边栏、选中态、代码块和文本选中配色 */
+/* 主题全局变量：统一暗色背景、侧边栏、选中态和代码块配色 */
 :root {
-    --bg-color: #EAF3EC;
-    --side-bar-bg-color: #EAF3EC;
-    --control-text-color: #777;
-    --active-file-bg-color: #D1ECDE;
-    --active-file-border-color: #57A266;
-    --code-block-bg-color: #d9e8dd;
-    --text-selection-bg-color: #C9E3CF;
+    --bg-color: #141c18;
+    --side-bar-bg-color: #1b2520;
+    --text-color: #a5b4aa;
+    --control-text-color: #a5b4aa;
+    --active-file-bg-color: #2a3a32;
+    --active-file-border-color: #63a873;
+    --code-block-bg-color: #24322b;
+    --text-selection-bg-color: #355342;
 }
 
 @include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
 
-/* 字体资源：定义正文常规、斜体、加粗、粗斜体的字体文件 */
+/* 字体资源：定义正文常规、斜体、粗体与粗斜体 */
 /* open-sans-regular - latin-ext_latin */
 @font-face {
     font-family: 'Open Sans';
@@ -53,20 +54,20 @@ based on: typora-default-themes (https://github.com/typora/typora-default-themes
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
   }
 
-/* 页面基础外观：控制整体字号、背景和正文文本风格 */
+/* 页面基础外观：控制全局背景、正文文字和阅读基础参数 */
 html {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
-    background-color: #EAF3EC;
+    background-color: #141c18;
 }
 
 body {
     font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', 'SF Pro', sans-serif;
-    color: rgb(51, 51, 51);
+    color: rgb(214, 222, 217);
     line-height: 1.6;
 }
 
-/* 文档主编辑区：控制内容宽度、居中和留白 */
+/* 主文档编辑区：控制内容宽度、居中和留白 */
 #write {
     max-width: 860px;
   	margin: 0 auto;
@@ -91,9 +92,9 @@ body {
     margin-top: 30px;
 }
 
-/* 标题与链接：统一标题层级视觉和链接展示风格 */
+/* 标题与链接：统一层级视觉和链接样式 */
 a {
-    color: darkgreen;
+    color: #79c68a;
 }
 h1,
 h2,
@@ -143,12 +144,12 @@ h6 code {
 h1 {
     font-size: 2.25em;
     line-height: 1.2;
-    border-bottom: 1px solid #9bd19e;
+    border-bottom: 1px solid #4d7758;
 }
 h2 {
     font-size: 1.75em;
     line-height: 1.225;
-    border-bottom: 1px solid #9bd19e;
+    border-bottom: 1px solid #4d7758;
 }
 
 /*@media print {
@@ -180,10 +181,10 @@ h5 {
 }
 h6 {
    font-size: 1em;
-    color: #777;
+    color: #a5b4aa;
 }
 
-/* 基础排版元素：段落、列表、分割线等常用块级元素间距与结构 */
+/* 基础排版元素：段落、列表、分割线等结构样式 */
 p,
 blockquote,
 ul,
@@ -200,7 +201,7 @@ hr {
     height: 2px;
     padding: 0;
     margin: 16px 0;
-    background-color: #57a266;
+    background-color: #63a873;
     border: 0 none;
     overflow: hidden;
     box-sizing: content-box;
@@ -222,10 +223,10 @@ ol:last-child {
     margin-bottom: 0;
 }
 
-/* 引用与表格：强调块、表格边框和斑马纹阅读体验 */
+/* 引用与表格：强调信息块、表格边框与斑马纹 */
 blockquote {   
-    background-color: #e2f1e9;
-    border-left: 6px solid #57a266;
+    background-color: #1f2c26;
+    border-left: 6px solid #63a873;
     border-radius: 4px;
     padding: 0 15px;
 }
@@ -237,25 +238,26 @@ table {
     word-break: initial;
 }
 table tr {
-    border: 1px solid #dfe2e5;
+    border: 1px solid #3a4941;
     margin: 0;
     padding: 0;
 }
 table tbody tr:nth-child(odd) {
-    background-color: #f8f8f8;
+    background-color: #141c18;
 }
-table tbody tr:nth-child(even) {
-    background-color: #EAF3EC;
+table tbody tr:nth-child(even),
+table thead tr {
+    background-color: #1c2722;
 }
 table th {
     font-weight: bold;
-    border: 1px solid #57a266;
+    border: 1px solid #5e9f6d;
     border-bottom: 0;
     margin: 0;
     padding: 6px 13px;
 }
 table td {
-    border: 1px solid #57a266;
+    border: 1px solid #5e9f6d;
     margin: 0;
     padding: 6px 13px;
 }
@@ -268,29 +270,54 @@ table td:last-child {
     margin-bottom: 0;
 }
 
-/* 代码相关：代码提示、代码块与行内代码的视觉风格 */
+/* 代码相关：代码提示、代码块和行内代码的视觉风格 */
 .CodeMirror-lines {
     padding-left: 4px;
 }
 
 .code-tooltip {
-    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
-    border-top: 1px solid #eef2f2;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .45);
+    border-top: 1px solid #2f3d36;
 }
 
 .md-fences,
 tt {
-    border: 1px solid #e7eaed;
+    border: 1px solid #3b4a41;
     background-color: var(--code-block-bg-color);
+    color: #ffffff;
     border-radius: 3px;
     padding: 0;
     padding: 2px 4px 0px 4px;
     font-size: 0.9em;
 }
 
+.md-fences pre,
+.md-fences pre code,
+.md-fences .CodeMirror,
+.md-fences .CodeMirror-lines,
+.md-fences .cm-variable,
+.md-fences .cm-variable-2,
+.md-fences .cm-variable-3,
+.md-fences .cm-overlay.cm-variable,
+.md-fences .CodeMirror-line {
+    color: #d8e6de;
+}
+
+.md-fences .cm-builtin {
+    color: #3945c6;
+}
+
+.md-fences .cm-keyword {
+    color: #af00c6;
+}
+
+.md-fences .cm-def {
+    color: #2828fb;
+}
+
 code {
-    color: #359D09;
-    background-color: #D9E8DD;
+    color: #bfeec1;
+    background-color: #2a3931;
     padding: 0 2px 0 2px;
     border-radius: 2px;
 }
@@ -306,7 +333,7 @@ code {
   margin-left: -1.3em;
 }
 
-/* 打印场景：导出/打印时的字号与换页行为控制 */
+/* 打印场景：导出时字号与换行行为 */
 @media print {
     html {
         font-size: 13px;
@@ -324,10 +351,10 @@ code {
 	padding: 1rem;
     font-size: 85%;
     line-height: 1.45;
-    background-color: #f7f7f7;
+    background-color: #1b2520;
     border: 0;
     border-radius: 3px;
-    color: #777777;
+    color: #a5b4aa;
     margin-top: 0 !important;
 }
 
@@ -336,10 +363,10 @@ code {
 }
 
 .md-mathjax-midline {
-    background: #fafafa;
+    background: #1b2520;
 }
 
-/* 编辑器辅助信息：焦点标题、图片元信息、标签、目录等辅助区域 */
+/* 编辑辅助区：焦点标题、图片元信息、标签和目录 */
 #write>h3.md-focus:before{
 	left: -1.5625rem;
 	top: .375rem;
@@ -365,7 +392,7 @@ code {
 }
 
 .md-tag {
-    color: #a7a7a7;
+    color: #90a095;
     opacity: 1;
 }
 
@@ -374,48 +401,101 @@ code {
     padding-bottom:20px;
 }
 
-/* 侧边栏与快速打开：文件视图/大纲视图及快速检索面板外观 */
+/* 侧边栏切换与文件/大纲交互 */
 .sidebar-tabs {
     border-bottom: none;
+}
+
+#typora-sidebar .info-panel-tab-wrapper .info-panel-tab,
+#typora-sidebar .sidebar-tabs .tab-nav-item {
+    color: #d8e6de !important;
+}
+
+#typora-sidebar .info-panel-tab-wrapper .info-panel-tab.active,
+#typora-sidebar .sidebar-tabs .tab-nav-item.active,
+#typora-sidebar .info-panel-tab-wrapper .info-panel-tab.active:hover,
+#typora-sidebar .sidebar-tabs .tab-nav-item.active:hover,
+#typora-sidebar .info-panel-tab-wrapper .info-panel-tab.active:focus,
+#typora-sidebar .sidebar-tabs .tab-nav-item.active:focus {
+    background-color: #57A266 !important;
+    color: #ffffff !important;
 }
 
 #typora-sidebar #sidebar-content .file-list-item.active {
     border-left: 4px solid var(--active-file-border-color) !important;
 }
 
-#typora-sidebar #sidebar-content #outline-content .outline-item:hover {
-    background-color: var(--active-file-bg-color) !important;
+#typora-sidebar #sidebar-content .file-list-item:hover,
+#typora-sidebar #sidebar-content .file-node-content:hover {
+    background-color: transparent !important;
+    color: #eef5f1 !important;
 }
 
+#typora-sidebar #sidebar-content #outline-content .outline-item:hover,
+#typora-sidebar #sidebar-content #outline-content .outline-item:hover .outline-label,
+#typora-sidebar #sidebar-content #outline-content .outline-label:hover {
+    background-color: var(--active-file-bg-color) !important;
+    color: #eef5f1 !important;
+}
+
+/* 快速打开面板：检索列表的暗色样式 */
 #typora-quick-open {
-    border: 1px solid #ddd;
-    background-color: #f8f8f8;
+    border: 1px solid #35443b;
+    background-color: #1b2520;
 }
 
 #typora-quick-open-item {
-    background-color: #FAFAFA;
-    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    background-color: #1f2a24;
+    border-color: #2f3d36 #35443b #35443b #2f3d36;
     border-style: solid;
     border-width: 1px;
 }
 
 /** focus mode */
 .on-focus-mode blockquote {
-    border-left-color: rgba(85, 85, 85, 0.12);
+    border-left-color: rgba(99, 168, 115, 0.45);
 }
 
+/* 顶层菜单与右键菜单：统一背景、边框和可读性 */
 header, .context-menu, .megamenu-content, footer{
     font-family: "Segoe UI", "Arial", sans-serif;
 }
 
-/* 文件树交互：仅控制图标显隐与侧边栏基础样式 */
+.context-menu,
+.dropdown-menu,
+.megamenu-content {
+    background-color: #1b2520 !important;
+    color: #d8e6de !important;
+    border-color: #3a4941 !important;
+}
+
+.context-menu .menu-item,
+.context-menu .menu-style-btn,
+.dropdown-menu .menu-item,
+.dropdown-menu a,
+.megamenu-content .menu-item,
+.megamenu-content a {
+    color: #d8e6de !important;
+}
+
+.context-menu .menu-item:hover,
+.context-menu .menu-style-btn:hover,
+.dropdown-menu .menu-item:hover,
+.dropdown-menu a:hover,
+.megamenu-content .menu-item:hover,
+.megamenu-content a:hover {
+    background-color: #2a3a32 !important;
+    color: #ffffff !important;
+}
+
 .file-node-content:hover .file-node-icon,
 .file-node-content:hover .file-node-open-state{
     visibility: visible;
 }
 
+/* 侧边栏基础底色：在系统无缝模式下保持一致 */
 .mac-seamless-mode #typora-sidebar {
-    background-color: #fafafa;
+    background-color: #1b2520;
     background-color: var(--side-bar-bg-color);
 }
 
@@ -427,30 +507,37 @@ header, .context-menu, .megamenu-content, footer{
     color: #b4654d;
 }
 
-/* 通知、菜单与偏好设置：应用级界面的配色与层次 */
+/* 通知、分割线与偏好设置：应用级界面暗色统一 */
 
 #md-notification{
     border: 0;
-    background-color: #e7f0e7;
+    background-color: #1f2a24;
 }
 
 #md-notification .btn {
     border: 0;
-    background-color: #57a266;
+    background-color: #63a873;
 }
 
 .dropdown-menu .divider {
-    border-color: #e5e5e5;
+    border-color: #3a4941;
     opacity: 0.4;
 }
 
 .ty-preferences .window-content {
-    background-color: #fafafa;
+    background-color: #1b2520;
+}
+
+.ty-preferences .window-header,
+.ty-preferences .titlebar,
+.ty-preferences .window-title {
+    background-color: #1b2520 !important;
+    color: #d8e6de !important;
 }
 
 .ty-preferences .nav-group-item.active {
-    color: white;
-    background: #999;
+    color: #ffffff;
+    background: #57A266;
 }
 
 /* preferences panel color mapping */
@@ -458,33 +545,69 @@ header, .context-menu, .megamenu-content, footer{
 .ty-preferences .pane-group,
 .ty-preferences .tab-content-container,
 .ty-preferences .nav-group {
-    background-color: #EAF3EC !important;
+    background-color: #1b2520 !important;
 }
 
 .ty-preferences .nav-group-item {
-    color: rgb(51, 51, 51);
+    color: rgb(214, 222, 217);
 }
 
 .ty-preferences .nav-group-item.active {
-    color: white;
+    color: #ffffff;
     background: #57A266;
 }
 
-.ty-preferences .nav-group-item.active {
-    color: white !important;
-    background: #57A266 !important;
+/* 偏好设置右侧内容：文本、输入框、下拉框与选项可读性 */
+.ty-preferences .tab-content-container,
+.ty-preferences .tab-content-container label,
+.ty-preferences .tab-content-container span,
+.ty-preferences .tab-content-container p,
+.ty-preferences .tab-content-container .setting-item,
+.ty-preferences .tab-content-container .control-label {
+    color: #ffffff !important;
 }
 
-/* 按钮样式：菜单风格按钮和高亮区域的统一视觉 */
-.menu-item-container a.menu-style-btn {
-    background-color: #f5f8fa;
-    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+.ty-preferences .tab-content-container * {
+    color: #ffffff !important;
 }
+
+.ty-preferences .tab-content-container input[type="text"],
+.ty-preferences .tab-content-container input[type="number"],
+.ty-preferences .tab-content-container input[type="search"],
+.ty-preferences .tab-content-container select,
+.ty-preferences .tab-content-container textarea {
+    background-color: #24322b !important;
+    color: #ffffff !important;
+    border: 1px solid #4d6257 !important;
+}
+
+.ty-preferences .tab-content-container select option,
+.ty-preferences .tab-content-container option {
+    background-color: #24322b !important;
+    color: #ffffff !important;
+}
+
+.ty-preferences select,
+.ty-preferences option {
+    background-color: #24322b !important;
+    color: #ffffff !important;
+}
+
+.ty-preferences .tab-content-container input[type="checkbox"],
+.ty-preferences .tab-content-container input[type="radio"] {
+    accent-color: #57A266;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #202b25;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.08), hsla(0, 0%, 100%, 0)); 
+}
+
+/* 文本选中与代码选中：保持正文和代码区选中反馈一致 */
 ::selection {
     background: var(--text-selection-bg-color);  /* 文字选中颜色 */
 }
 
-/* 文本选中与代码选中：保证正文和代码区域选中体验一致 */
 .md-fences::selection,
 .md-fences *::selection,
 pre code::selection,
@@ -515,15 +638,15 @@ code::selection {
     background: var(--text-selection-bg-color) !important;
 }
 
-/* 滚动条：统一轨道、滑块和悬停状态的主题色 */
+/* 页面滚动条：轨道、滑块和悬停颜色 */
 ::-webkit-scrollbar-track {
-  background: #EAF3EC;   /* 轨道底色 */
+    background: #1b2520;   /* 轨道底色 */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #9AC9A6;   /* 滑块颜色 */
+    background: #4f8463;   /* 滑块颜色 */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #57A266;   /* 悬停时更深 */
+    background: #63A873;   /* 悬停时更深 */
 }
