@@ -1,7 +1,7 @@
 /* Eyes Green -Theme for Typora
-version: 2.1.1
+version: 2.1.2
 author:AqiMake
-finish-date: 2026-04-25
+finish-date: 2026-5-8
 homepage: https://github.com/AqiMake/typora-eyes-green-theme
 based on: typora-default-themes (https://github.com/typora/typora-default-themes)
  */
@@ -9,11 +9,11 @@ based on: typora-default-themes (https://github.com/typora/typora-default-themes
 /* 主题全局变量：统一管理主背景、侧边栏、选中态、代码块和文本选中配色 */
 :root {
     --bg-color: #EAF3EC;
-    --side-bar-bg-color: #EAF3EC;
+    --side-bar-bg-color: #e0e9e2;
     --control-text-color: #777;
     --active-file-bg-color: #D1ECDE;
     --active-file-border-color: #57A266;
-    --code-block-bg-color: #e0e9e2;
+    --code-block-bg-color: var(--side-bar-bg-color);
     --text-selection-bg-color: #C9E3CF;
 }
 
@@ -57,7 +57,7 @@ based on: typora-default-themes (https://github.com/typora/typora-default-themes
 html {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
-    background-color: #EAF3EC;
+    background-color: var(--bg-color);
 }
 
 body {
@@ -242,10 +242,11 @@ table tr {
     padding: 0;
 }
 table tbody tr:nth-child(odd) {
-    background-color: #f8f8f8;
-}
-table tbody tr:nth-child(even) {
     background-color: #EAF3EC;
+}
+table tbody tr:nth-child(even),
+tr:first-child {
+    background-color: var(--code-block-bg-color);
 }
 table th {
     font-weight: bold;
