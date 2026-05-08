@@ -1,7 +1,7 @@
 /* Eyes Green -Theme for Typora
-version: 2.1.1
+version: 2.1.2
 author:AqiMake
-finish-date: 2026-04-25
+finish-date: 2026-5-8
 homepage: https://github.com/AqiMake/typora-eyes-green-theme
 based on: typora-default-themes (https://github.com/typora/typora-default-themes)
  */
@@ -11,7 +11,7 @@ based on: typora-default-themes (https://github.com/typora/typora-default-themes
     --bg-color: #141c18;
     --side-bar-bg-color: #1b2520;
     --text-color: #a5b4aa;
-    --control-text-color: #a5b4aa;
+    --control-text-color: var(--text-color);
     --active-file-bg-color: #2a3a32;
     --active-file-border-color: #63a873;
     --code-block-bg-color: #24322b;
@@ -58,12 +58,12 @@ based on: typora-default-themes (https://github.com/typora/typora-default-themes
 html {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
-    background-color: #141c18;
+    background-color: var(--bg-color);
 }
 
 body {
     font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', 'SF Pro', sans-serif;
-    color: rgb(214, 222, 217);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
